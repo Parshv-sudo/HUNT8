@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairy Tale Puzzle Challenge - Clue 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Fairy Tale Puzzle Challenge</h1>
+
+    <div class="container">
+        <h2>🔮 Clue 2: The Mirror of Truth</h2>
+        <p>
+            I show your face, but not your past,<br>
+            A simple pane, yet I am vast.<br>
+            A fairy queen once called me wise,<br>
+            For I reveal the truth, not lies.<br>
+            What am I?
+        </p>
+        <input type="text" id="clue2" placeholder="Your answer">
+        <button onclick="checkAnswer(2, 'enchanted mirror')">Submit</button>
+        <p id="result2"></p>
+        <button id="nextClue2" class="hidden" onclick="location.href='clue3.html'">Next Clue</button>
+    </div>
+
+    <script>
+        function checkAnswer(clueNumber, correctAnswer) {
+            let userAnswer = document.getElementById('clue' + clueNumber).value.trim().toLowerCase();
+            let resultElement = document.getElementById('result' + clueNumber);
+            let nextButton = document.getElementById('nextClue' + clueNumber);
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = "✅ Correct!";
+                resultElement.style.color = "lightgreen";
+                nextButton.classList.remove('hidden');
+            } else {
+                resultElement.innerHTML = "❌ Try again!";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+    <script src="disable-inspect.js"></script>
+
+</body>
+</html>

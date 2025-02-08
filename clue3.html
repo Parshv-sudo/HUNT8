@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairy Tale Puzzle Challenge - Clue 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Fairy Tale Puzzle Challenge</h1>
+
+    <div class="container">
+        <h2>🏰 Clue 3: The Lost Kingdom Cipher</h2>
+        <p>Cipher Text: "<b>Jxu yjxy ut fqjx jxuqj!</b>"</p>
+        <p>Clue: This secret phrase is written in a <b>shift-10 cipher</b>.</p>
+        <input type="text" id="clue3" placeholder="Your answer">
+        <button onclick="checkAnswer(3, 'the king is still alive')">Submit</button>
+        <p id="result3"></p>
+        <button id="nextClue3" class="hidden" onclick="location.href='clue4.html'">Next Clue</button>
+    </div>
+
+    <script>
+        function checkAnswer(clueNumber, correctAnswer) {
+            let userAnswer = document.getElementById('clue' + clueNumber).value.trim().toLowerCase();
+            let resultElement = document.getElementById('result' + clueNumber);
+            let nextButton = document.getElementById('nextClue' + clueNumber);
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = "✅ Correct!";
+                resultElement.style.color = "lightgreen";
+                nextButton.classList.remove('hidden');
+            } else {
+                resultElement.innerHTML = "❌ Try again!";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+    <script src="disable-inspect.js"></script>
+
+</body>
+</html>

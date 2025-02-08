@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairy Tale Puzzle Challenge - Clue 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Fairy Tale Puzzle Challenge</h1>
+
+    <div class="container">
+        <h2>🦄 Clue 1: Find the Hidden Unicorn</h2>
+        <p>Clue: Deep in the enchanted forest, a legendary animal roams, hidden among the mystical trees. Can you find it?</p>
+        <img src="the_hidden_animal.jpg" alt="Find the Unicorn" class="puzzle-image" style="width: 300px; height: auto; display: block; margin: auto;">
+        <input type="text" id="clue1" placeholder="Your answer">
+        <button onclick="checkAnswer(1, 'unicorn')">Submit</button>
+        <p id="result1"></p>
+        <button id="nextClue1" class="hidden" onclick="location.href='clue2.html'">Next Clue</button>
+    </div>
+
+    <script>
+        function checkAnswer(clueNumber, correctAnswer) {
+            let userAnswer = document.getElementById('clue' + clueNumber).value.trim().toLowerCase();
+            let resultElement = document.getElementById('result' + clueNumber);
+            let nextButton = document.getElementById('nextClue' + clueNumber);
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = "✅ Correct!";
+                resultElement.style.color = "lightgreen";
+                nextButton.classList.remove('hidden');
+            } else {
+                resultElement.innerHTML = "❌ Try again!";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+    <script src="disable-inspect.js"></script>
+
+</body>
+</html>

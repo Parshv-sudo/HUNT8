@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairy Tale Puzzle Challenge - Clue 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Fairy Tale Puzzle Challenge</h1>
+
+    <div class="container">
+        <h2>✨ Clue 4: The Three Fairy Gifts</h2>
+        <p>A kind fairy offers you three magical gifts, but one is cursed:</p>
+        <ul>
+            <li>1️⃣ Golden Feather – Grants wisdom, glows softly.</li>
+            <li>2️⃣ Silver Bell – Calls a protective spirit, rings when danger is near.</li>
+            <li>3️⃣ Emerald Stone – Said to bring eternal luck, but its glow flickers.</li>
+        </ul>
+        <img src="fairy_gifts.png" alt="Fairy Gifts" class="puzzle-image-small">
+        <p>The fairy warns: Any one is safe. The others are either safe or cursed.</p>
+        <p>Which gift should you accept?</p>
+        <input type="text" id="clue4" placeholder="Your answer">
+        <button onclick="checkAnswer(4, 'silver bell')">Submit</button>
+        <p id="result4"></p>
+    </div>
+
+    <script>
+        function checkAnswer(clueNumber, correctAnswer) {
+            let userAnswer = document.getElementById('clue' + clueNumber).value.trim().toLowerCase();
+            let resultElement = document.getElementById('result' + clueNumber);
+            
+            if (userAnswer === correctAnswer) {
+                resultElement.innerHTML = "✅ Correct!";
+                resultElement.style.color = "lightgreen";
+            } else {
+                resultElement.innerHTML = "❌ Try again!";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+    <script src="disable-inspect.js"></script>
+
+</body>
+</html>
